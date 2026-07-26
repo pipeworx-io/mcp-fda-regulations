@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-fda-regulations",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "FDA Regulations MCP — US Food & Drug Administration regulations (21 CFR).",
   "type": "module",
   "main": "src/index.ts",
