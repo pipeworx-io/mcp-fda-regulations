@@ -1,11 +1,19 @@
 interface McpToolDefinition {
   name: string;
   description: string;
+  /** Human-facing one-liner (fleet #1967). Optional; consumers fall back to
+   *  description. Kept in step with shared/src/types.ts — scripts/lib/
+   *  check-inlined-types.mjs reports drift at publish time. */
+  summary?: string;
   inputSchema: {
     type: 'object';
     properties: Record<string, unknown>;
     required?: string[];
+    anyOf?: Array<{ required: string[] }>;
+    oneOf?: Array<{ required: string[] }>;
+    allOf?: Array<{ required: string[] }>;
   };
+  outputSchema?: Record<string, unknown>;
 }
 
 interface McpToolExport {
@@ -370,8 +378,14 @@ async function searchRegulations(args: Record<string, unknown>): Promise<unknown
     query,
     total_matches: total,
     count: results.length,
-    scope: 'FCC regulations — 47 CFR (Federal Communications Commission / telecommunications)',
-    source: 'eCFR / FCC 47 CFR',
+    // This pack queries TITLE 21 (see the const above) — FDA food, drugs,
+    // devices and cosmetics. It said FCC / 47 CFR, copied from a sibling eCFR
+    // pack, so a food-labeling search returned the CORRECT 21 CFR 101 rows
+    // labelled as telecommunications law. An agent reading scope before citing
+    // either refuses a right answer or attributes food law to the FCC — and
+    // nothing catches it, because the rows themselves are fine.
+    scope: 'FDA regulations — 21 CFR (Food and Drug Administration: food, drugs, devices, cosmetics)',
+    source: 'eCFR / FDA 21 CFR',
     results,
   };
 }

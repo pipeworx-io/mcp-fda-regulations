@@ -3,7 +3,7 @@
   "name": "io.github.pipeworx-io/fda-regulations",
   "title": "Fda Regulations",
   "description": "FDA Regulations MCP — US Food & Drug Administration regulations (21 CFR).",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "websiteUrl": "https://pipeworx.io/packs/fda-regulations",
   "repository": {
     "url": "https://github.com/pipeworx-io/mcp-fda-regulations",
