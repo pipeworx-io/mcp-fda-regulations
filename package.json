@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-fda-regulations",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "FDA Regulations MCP — US Food & Drug Administration regulations (21 CFR).",
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "mode": "gateway",
     "slug": "fda-regulations",
     "gatewaySlug": "fda-regulations",
-    "sourceHash": "v1-7ea777139cce143a8068f7332e2a51566cb4db49fe9af7b1aaccc7034dc2aec6",
-    "sourceCommit": "bb047243cf27f32453103de186b8e6a8b6a1ce79"
+    "sourceHash": "v1-ba66f7aca32e8e77ce8259f544274aa4265b7b2b610179c5dea4b3c0e9f0328f",
+    "sourceCommit": "d35e32c1ffe988e24d391dedb35666387fd2b3d6"
   }
 }
